@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: devops-viewer
+  namespace: default
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: devops-manager
+  namespace: default
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: security-admin
+  namespace: default
