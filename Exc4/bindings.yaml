@@ -1,0 +1,38 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: view-only-binding
+subjects:
+- kind: ServiceAccount
+  name: devops-viewer
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: view-only
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: deployment-manager-binding
+subjects:
+- kind: ServiceAccount
+  name: devops-manager
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: deployment-manager
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: secrets-manager-binding
+subjects:
+- kind: ServiceAccount
+  name: security-admin
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: secrets-manager
+  apiGroup: rbac.authorization.k8s.io
